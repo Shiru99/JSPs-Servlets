@@ -19,7 +19,7 @@
   	<servlet-name>XMLservlet</servlet-name>
   	<servlet-class>io.summer.XMLservlet</servlet-class>
   </servlet>
-    <servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>XMLservlet</servlet-name>
   	<url-pattern>/XMLservletPath</url-pattern>
   </servlet-mapping>
