@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SimpleServlet
+ * Servlet implementation class SimpleServlet using Annotations
  */
 @WebServlet(description = "A simple servlet", urlPatterns = { "/SimpleServletPath" })
 /*
