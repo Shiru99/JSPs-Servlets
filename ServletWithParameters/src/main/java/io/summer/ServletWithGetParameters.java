@@ -21,7 +21,7 @@ public class ServletWithGetParameters extends HttpServlet {
 	{
 		System.out.println("Hello from doGet");
 		
-		// http://localhost:8989/ServletWithParameters/ParametersWithGet?userid=99&user=John
+		// http://localhost:8989/ServletWithParameters/ParametersWithGet?userid=99&user=John+Doe
 		String userName = request.getParameter("user");
 		String userid = request.getParameter("userid");
 		
