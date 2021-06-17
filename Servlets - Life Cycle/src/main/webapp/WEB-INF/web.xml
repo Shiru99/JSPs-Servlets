@@ -9,4 +9,39 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>recruiter</servlet-name>
+    <servlet-class>io.summer.Recruiter</servlet-class>
+    <!-- ServletConfig -->
+    <init-param>
+      <param-name>Email</param-name>
+      <param-value>forRecruiter@xyz.com</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recruiter</servlet-name>
+    <url-pattern>/recruiter</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>applicant</servlet-name>
+    <servlet-class>io.summer.Applicant</servlet-class>
+    <!-- ServletConfig -->
+    <init-param>
+      <param-name>Email</param-name>
+      <param-value>forApplicant@xyz.com</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>applicant</servlet-name>
+    <url-pattern>/applicant</url-pattern>
+  </servlet-mapping>
+  
+  <!-- ServletContext -->
+  <context-param>
+    <param-name>Website-name</param-name>
+    <param-value>Recruiter-Applicant.tg</param-value>
+  </context-param>
+  
 </web-app>
