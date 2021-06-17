@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlets - Life Cycle</title>
+</head>
+<body>
+	<h2>Servlets - Life Cycle</h2>
+	<ul>
+		<li>Servlet is normally created when a user first invokes a URL corresponding to the servlet</li>
+		<li>The servlet is initialized by calling the init() method.</li>
+		<li>The servlet calls service() method to process a client's request.</li>
+		<li>The servlet is terminated by calling the destroy() method.</li>
+		<li>Finally, servlet is garbage collected by the garbage collector of the JVM.</li>
+	</ul>
+
+
+	<h3>init() Method</h3>
+	<ul>
+		<li>The servlet container calls the init method exactly once after instantiating the servlet.
+		 The init method must complete successfully before the servlet can receive any requests.</li>
+		<li>When a user invokes a servlet, a single instance of each servlet gets created,
+		 with each user request resulting in a new thread</li>
+	</ul>
+
+	<h3>service() Method</h3>
+	<ul>
+		<li>The servlet container (i.e. web server) calls the service() method to handle requests
+		 coming from the client( browsers) and to write the formatted response back to the client.</li>
+		<li>Each time the server receives a request for a servlet, the server spawns a new thread
+		 and calls service. The service() method checks the HTTP request type and calls methods
+		  as appropriate.</li>
+	</ul>
+
+	<h3>destroy() Method</h3>
+	<ul>
+		<li>The destroy() method is called only once at the end of the life cycle of a servlet.
+		 And it will not call the service method again on this servlet.</li>
+		<li>This method gives the servlet an opportunity to clean up any resources that are 
+		being held (for example, memory, file handles, threads).</li>
+	</ul>
+
+
+</body>
+</html>
