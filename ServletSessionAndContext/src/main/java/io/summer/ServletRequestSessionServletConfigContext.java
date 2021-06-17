@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,11 +13,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(description = "Servlet : Request, session & context objects", urlPatterns = { "/Scopes" })
-public class ServletWithGetParameters extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-    public ServletWithGetParameters() {    }
+@WebServlet(
+		description = "Servlet : Request, session & context objects", 
+		urlPatterns = { "/Scopes" },
+		// ServletConfig - init()
+		initParams = {@WebInitParam(name="defaultName",value = "New User")}
+)
+public class ServletRequestSessionServletConfigContext extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
@@ -49,6 +52,9 @@ public class ServletWithGetParameters extends HttpServlet {
 		writer.println("<br><h3>Session :</h3>"
 						+"<h4>Hello "+(String) session.getAttribute("userName")
 						+"</h4>");
+		writer.println("<br><h3>ServletConfig :</h3>"
+				+"<h4>Hello "+(String) this.getServletConfig().getInitParameter("defaultName")
+				+"</h4>");
 		writer.println("<br><h3>Context :</h3>"
 						+"<h4>Hello "+(String) context.getAttribute("userName")
 						+"</h4>"+"<br>Total User Count : "+context.getAttribute("userCount"));
