@@ -27,7 +27,6 @@ public class ServletRequestSessionServletConfigContext extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		
-		
 		// http://localhost:8989/ServletSessionAndContext/Scopes?user=John+Doe
 		String userName = request.getParameter("user");
 		
