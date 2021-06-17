@@ -52,7 +52,8 @@ public class ServletRequestSessionServletConfigContext extends HttpServlet {
 						+"<h4>Hello "+(String) session.getAttribute("userName")
 						+"</h4>");
 		writer.println("<br><h3>ServletConfig :</h3>"
-				+"<h4>Hello "+(String) this.getServletConfig().getInitParameter("defaultName")
+				+"<h4>default user name - "+
+				(String) this.getServletConfig().getInitParameter("defaultName")
 				+"</h4>");
 		writer.println("<br><h3>Context :</h3>"
 						+"<h4>Hello "+(String) context.getAttribute("userName")
