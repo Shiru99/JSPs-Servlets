@@ -27,9 +27,11 @@
 		
 		PageContext pageContext = _jspxFactory.getPageContext(this, request, response, 
 		  					null, true, 8192, true);
+	    
+	    
+	    HttpSession session = pageContext.getSession();
 	    ServletContext application = pageContext.getServletContext();
 	    ServletConfig config = pageContext.getServletConfig();
-	    HttpSession session = pageContext.getSession();
 	*/
 
 	if (context1.getAttribute("userCount") == null) {
