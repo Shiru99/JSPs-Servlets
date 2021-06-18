@@ -5,7 +5,7 @@
 - JSP is a technology for developing webpages that supports dynamic content. This helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>
 - When you request a .jsp file in a suitable way, the JSP file is automatically translated into a proper Java servlet, compiled, and if successful, loaded into the servlet engine and “run” by performing a method call into the servlet class.
 
----
+
 
 ## How JSP works ?
 
@@ -18,5 +18,28 @@
 
 
 #### Path for generated servlet
-    apache-tomcat-10.0.6/work/Catalina/localhost/JSP_Basics/org/apache/jsp/
+    
+        apache-tomcat-10.0.6/work/Catalina/localhost/JSP_Basics/org/apache/jsp/
+
+---
+
+## PageContext, HttpSession, ServletContext, ServletConfig
+
+### abstract class PageContext
+
+The pageContext object can be used to set, get or remove attribute from one of the following scopes: <b>REQUEST_SCOPE / PAGE_SCOPE / SESSION_SCOPE / APPLICATION_SCOPE</b>
+
+* JSP Page – Scope: PAGE_CONTEXT
+* HTTP Request – Scope: REQUEST_CONTEXT
+* HTTP Session – Scope: SESSION_CONTEXT
+* Application Level – Scope: APPLICATION_CONTEXT
+
+
+#### Pre-defined for JSP :
+```
+    PageContext pageContext = _jspxFactory.getPageContext(this, request, response, null, true, 8192, true);
+   	ServletContext application = pageContext.getServletContext();
+   	ServletConfig config =	 pageContext.getServletConfig();
+	HttpSession session = pageContext.getSession();
+```
 

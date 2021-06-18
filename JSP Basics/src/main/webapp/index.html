@@ -37,7 +37,18 @@
 		<b> Path for generated servlet : </b>
 		<i>apache-tomcat-10.0.6/work/Catalina/localhost/JSP_Basics/org/apache/jsp/</i>
 		
-
+	<h3>PageContext, HttpSession, ServletContext, ServletConfig</h3>
+	<pre>Pre-defined for JSP
+		
+		PageContext pageContext = _jspxFactory.getPageContext(this, request, response, null, true, 8192, true);
+	   	ServletContext application = pageContext.getServletContext();
+	   	ServletConfig config =	 pageContext.getServletConfig();
+	   	HttpSession session = pageContext.getSession();</pre>
+	   	
+	<h4>abstract class PageContext : </h4>
+		
+		<p><i>The pageContext object can be used to set,get or remove attribute from one of the following scopes: </i> SESSION_SCOPE / APPLICATION_SCOPE / PAGE_SCOPE / REQUEST_SCOPE</p>
+	
 
 
 
