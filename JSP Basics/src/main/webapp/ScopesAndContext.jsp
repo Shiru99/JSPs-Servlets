@@ -23,7 +23,10 @@
 			The pageContext object can be used to set,get or remove attribute from
 			one of the following scopes: page, request, session, application
 			
-			scope : PageContext.SESSION_SCOPE/APPLICATION_SCOPE/PAGE_SCOPE/REQUEST_SCOPE
+			scope : PageContext.SESSION_SCOPE
+					APPLICATION_SCOPE
+					PAGE_SCOPE
+					REQUEST_SCOPE
 		
 		PageContext pageContext = _jspxFactory.getPageContext(this, request, response, 
 		  					null, true, 8192, true);
@@ -40,51 +43,27 @@
 
 	if (userName != null && userName != "") {
 		session1.setAttribute("userName", userName);
-
+		pageContext.setAttribute("userName",userName);
 		context1.setAttribute("userName", userName);
 		int userCount = (int) context1.getAttribute("userCount");
 		context1.setAttribute("userCount", ++userCount);
 
 		pageContext.setAttribute("DefaultUser", "No DefaultUser", PageContext.SESSION_SCOPE);
-	} else {
+	} 
+	else {
 		pageContext.setAttribute("DefaultUser", "This is DefaultUser", PageContext.SESSION_SCOPE);
 	}
+	
+	
+	pageContext.setAttribute("User", "UserAttribute", PageContext.REQUEST_SCOPE);
 	%>
-
-	<h3>Request :</h3>
-	<p>
-		Hello
-		<%=userName%>
-		!
-	</p>
+	
+	<!-- Searches for the named attribute in page, request, session (if valid), and
+	application scope(s) in order and returns the value associated or null. -->
+	<%= pageContext.findAttribute("User")%>
 
 
-	<h3>Session :</h3>
-	<p>
-		Hello
-		<%=(String) session1.getAttribute("userName")%>
-		!
-	</p>
-
-	<h3>PageContext Session Scope :</h3>
-	<p>
-		Hello
-		<%=(String) session.getAttribute("DefaultUser")%>
-		!
-	</p>
-
-	<h3>Context :</h3>
-	<p>
-		Hello
-		<%=(String) context1.getAttribute("userName")%>
-		!
-	</p>
-
-	<h3>
-		User Count :
-		<%=context1.getAttribute("userCount")%>
-	</h3>
-
+	<%@ include file="ScopesAndContextPageTwo.jsp" %>
 
 </body>
 </html>
