@@ -28,7 +28,14 @@ public class LoginService {
 		User user = new User();
 		
 		user.setUserName(userName);
-		user.setFullName(users.get(userName));
+		
+		String fullName = users.get(userName);
+		if(fullName == null) {
+			fullName = "New-User";
+		}
+
+		user.setFullName(fullName);
+		
 		return user;
 		
 	}
