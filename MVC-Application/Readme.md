@@ -8,6 +8,6 @@
 
 
 <img src="Screenshots/MVC pattern.jpeg" alt="MVC pattern" height="400"/>
-<img src="Screenshots/MVC pattern using servlet.jpeg" alt="MVC pattern using servlet" height="400"/>
+<img src="Screenshots/MVC pattern for java web-application.jpeg" alt="MVC pattern for java web-application" height="400"/>
 
 
