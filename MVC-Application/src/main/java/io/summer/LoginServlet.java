@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import io.summer.dto.User;
 import io.summer.service.LoginService;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,15 +26,31 @@ public class LoginServlet extends HttpServlet {
 		if(status) {
 			
 			User user = loginService.getUser(userName);
-			request.getSession().setAttribute("user", user);
 			
-			response.sendRedirect("success.jsp");	
+			// M-1 : Redirect from browser (change in URL in browser)
+			
+				// request.getSession().setAttribute("user", user);
+				// response.sendRedirect("success.jsp");
+			
 			/*
-			  Redirect from browser : 
-			 
 			 	1. In case of servlet need to pass path of servlet
 			 	2. sending response back & redirect can not be performed at a same time
 			*/ 
+			
+			
+			// M-2 : Redirect control from one servlet to another
+				request.setAttribute("user", user);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+				dispatcher.forward(request, response);
+				
+			/*
+			 	1. URL remains same on Browser side
+			 	2. sending response back & redirect can not be performed at a same time
+			*/ 
+			
+			
+			
+			
 			return;
 		}else {
 			response.sendRedirect("login.jsp");
