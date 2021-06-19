@@ -11,7 +11,11 @@
 </head>
 <body>
 	<%
-		User user = (User) session.getAttribute("user");
+		/* M-1 */
+		// User user = (User) session.getAttribute("user");
+	
+		/* M-2 */
+		User user = (User) request.getAttribute("user");
 	%>
 	<center>
 		<h2>Login Successful !!</h2>
