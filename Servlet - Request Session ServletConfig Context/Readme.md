@@ -25,3 +25,11 @@ When an HTTP request comes in, Tomcat pulls a thread from the Tomcat's thread po
 - Application or context scope
 
     Context scope starts from the point where a web application is put into service (started) till it is removed from service (shutdown) or the web application is reloaded. Parameters/attributes within the application scope will be available to all requests and sessions. 
+
+---
+
+### Request getParameter vs getAttribute :
+
+- getParameter() returns http request parameters. Those passed from the client to the server. For example http://example.com/servlet?parameter=1. Can only return String
+
+- getAttribute() is for server-side usage only - you fill the request with attributes that you can use within the same request. For example - you set an attribute in a servlet, and read it from a JSP. Can be used for any object, not just string.
