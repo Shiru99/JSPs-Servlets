@@ -7,8 +7,7 @@
 * Controller - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.
 
 
-<img src="Screenshots/MVC pattern.jpeg" alt="MVC pattern" height="300"/>
-<img src="Screenshots/MVC pattern for java web-application.jpeg" alt="MVC pattern for java web-application" height="300"/>
+<img src="Screenshots/MVC pattern.jpeg" alt="MVC pattern" height="360"/> <img src="Screenshots/MVC pattern for java web-application.jpeg" alt="MVC pattern for java web-application" height="360"/>
 
 ---
 
